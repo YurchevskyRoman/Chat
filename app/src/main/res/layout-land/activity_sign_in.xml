@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SignInActivity">
+    <include android:id="@+id/toolbar"
+             layout="@layout/toolbar"/>
+    <ScrollView
+            style="@style/AuthScrollView"
+    >
+        <android.support.percent.PercentRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:padding="5dp">
+            <TextView android:id="@+id/sign_in_header"
+                      style="@style/AuthHeader"
+            />
+            <android.support.design.widget.TextInputLayout
+                    android:id="@+id/email_input"
+                    android:layout_below="@+id/sign_in_header"
+                    app:errorEnabled="true"
+                    style="@style/TextInputLayout"
+                    app:layout_widthPercent="50%">
+                <EditText
+                        android:id="@+id/email_edit_text"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"
+                        style="@style/AuthEditText"
+                        android:imeOptions="flagNoExtractUi"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                    android:id="@+id/password_input"
+                    style="@style/TextInputLayout"
+                    android:layout_below="@+id/email_input"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/colorPrimary"
+                    app:layout_widthPercent="50%"
+                    app:errorEnabled="true">
+                <EditText
+                        android:id="@+id/password_edit_text"
+                        android:inputType="textPassword"
+                        android:hint="@string/password"
+                        style="@style/AuthEditText"
+                        android:imeOptions="flagNoExtractUi"/>
+            </android.support.design.widget.TextInputLayout>
+            <TextView android:id="@+id/error_text"
+                      android:layout_below="@id/password_input"
+                      android:text="@string/not_sign_in_error_text"
+                      style="@style/ErrorText"
+                      app:layout_widthPercent="70%"/>
+            <ProgressBar android:id="@+id/progress_bar"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/error_text"
+                         android:layout_centerHorizontal="true"
+                         android:indeterminateTint="@color/colorPrimary"/>
+            <Button android:id="@+id/sign_in_button"
+                    android:text="@string/sign_in"
+                    android:layout_below="@+id/progress_bar"
+                    style="@style/ButtonTemplate"
+                    app:layout_widthPercent="50%"
+                    android:stateListAnimator="@animator/button_animation"
+            />
+            <Button android:id="@+id/forgot_password_button"
+                    android:layout_below="@id/sign_in_button"
+                    style="@style/ForgotPasswordButton"/>
+            <TextView android:id="@+id/text"
+                      android:layout_below="@id/forgot_password_button"
+                      style="@style/DoNotHaveAnAccountText"/>
+            <Button
+                    android:id="@+id/sign_up_button"
+                    android:text="@string/sign_up"
+                    android:layout_below="@+id/text"
+                    style="@style/ButtonTemplate2"
+                    app:layout_widthPercent="50%"
+            />
+        </android.support.percent.PercentRelativeLayout>
+    </ScrollView>
+</RelativeLayout>

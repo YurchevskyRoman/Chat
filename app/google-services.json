@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "670354110785",
+    "firebase_url": "https://chat-73ee2.firebaseio.com",
+    "project_id": "chat-73ee2",
+    "storage_bucket": "chat-73ee2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670354110785:android:212ac8890e858c15",
+        "android_client_info": {
+          "package_name": "com.romanyu.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670354110785-0b54rvpmtcpde90gau9qda604nfpflr3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-6ogUJZtbev-OQdP34btaEn1-WVBNUsE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

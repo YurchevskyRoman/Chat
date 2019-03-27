@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Chat</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="dont_have_account">Do not have an account?</string>
+    <string name="reset">Reset</string>
+    <string name="reset_password">Reset password</string>
+    <string name="reset_password_title">Trouble Logging In?</string>
+    <string name="reset_password_text">Enter your email and we will send you a link to get back into your account.
+    </string>
+    <string name="or">or</string>
+    <string name="invalid_email">Invalid Email!!!</string>
+    <string name="invalid_password">Invalid Password!!!(The password must be at least 8 characters long and not more
+        than 32 and consist of [A-Z],[a-z],[0-9],[_],[.]).
+    </string>
+    <string name="invalid_username">Invalid Username!!!(The username must be at least 3 characters long and not more
+        than 32 and consist of [A-Z],[a-z],[0-9],_).
+    </string>
+    <string name="not_sign_in_error_text">The data you entered does not belong to an account. Please check your data and
+        try again.
+    </string>
+    <string name="not_sign_up_error_text">Account with this email already exist.</string>
+    <string name="verify_email_dialog_title">Verify Email</string>
+    <string name="verify_email_dialog_text">We will send you by mail a link to verify your email.</string>
+    <string name="verify_email_dialog_error_text">Email has not been confirmed!!!</string>
+    <string name="reset_password_dialog_title">Reset Password</string>
+    <string name="reset_password_dialog_text">We will send you by mail a link to reset your password.</string>
+    <string name="verify">Verify</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+</resources>
