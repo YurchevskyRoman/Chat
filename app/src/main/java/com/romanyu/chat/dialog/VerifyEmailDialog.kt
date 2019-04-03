@@ -17,15 +17,15 @@ import com.romanyu.chat.R
 import com.romanyu.chat.authUtil.isEmailVerify
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
-class VerifyEmailDialog : DialogFragment(),View.OnClickListener {
+class VerifyEmailDialog : DialogFragment(), View.OnClickListener {
 
-    interface OnVerifyAndCancelListener{
+    interface OnVerifyAndCancelListener {
         fun onCancel()
         fun onVerify()
     }
 
-    private lateinit var verifyAndCancelListener: OnVerifyAndCancelListener
-    private lateinit var errorTextView:TextView
+    private var verifyAndCancelListener: OnVerifyAndCancelListener? = null
+    private var errorTextView: TextView? = null
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
@@ -38,7 +38,7 @@ class VerifyEmailDialog : DialogFragment(),View.OnClickListener {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view:View = inflater.inflate(R.layout.verify_email_dialog,null)
+        val view: View = inflater.inflate(R.layout.verify_email_dialog, null)
         errorTextView = view.findViewById(R.id.verify_error_text)
         view.findViewById<Button>(R.id.verify_button).setOnClickListener(this)
         view.findViewById<Button>(R.id.cancel_button).setOnClickListener(this)
@@ -48,27 +48,27 @@ class VerifyEmailDialog : DialogFragment(),View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v?.id){
-            R.id.verify_button ->{
-                    reloadAndVerifyEmail()
+        when (v?.id) {
+            R.id.verify_button -> {
+                reloadAndVerifyEmail()
             }
-            R.id.cancel_button ->{
-                    verifyAndCancelListener.onCancel()
+            R.id.cancel_button -> {
+                verifyAndCancelListener?.onCancel()
             }
         }
     }
 
-    fun reloadAndVerifyEmail(){
+    fun reloadAndVerifyEmail() {
         progress_bar.visibility = View.VISIBLE
         val mUser = FirebaseAuth.getInstance().currentUser
         mUser?.reload()?.addOnSuccessListener(
-            object : OnSuccessListener<Void>{
+            object : OnSuccessListener<Void> {
                 override fun onSuccess(mVoid: Void?) {
                     progress_bar.visibility = View.GONE
-                    if(isEmailVerify()  ){
-                        verifyAndCancelListener.onVerify()
-                    }else{
-                        errorTextView.visibility = View.VISIBLE
+                    if (isEmailVerify()) {
+                        verifyAndCancelListener?.onVerify()
+                    } else {
+                        errorTextView?.visibility = View.VISIBLE
                     }
                 }
             }

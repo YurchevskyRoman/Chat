@@ -20,21 +20,25 @@ import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.FirebaseDatabase
 import com.romanyu.chat.dialog.VerifyEmailDialog
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : AppCompatActivity(), View.OnClickListener,TextWatcher {
+
+    val IS_ERROR_TEXT_VIEW_VISIBLE:String = "IS_ERROR_TEXT_VIEW_VISIBLE"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
         val user:FirebaseUser? = FirebaseAuth.getInstance().currentUser
         if(user != null){
-             if(isEmailVerify()){
-                 signInCompleted(this)
-             }else{
-                 user?.delete()
-             }
+            if(isEmailVerify()){
+                signInCompleted(this)
+            }else{
+                FirebaseDatabase.getInstance().reference.child("Users").child(user.uid).removeValue()
+                user.delete()
+            }
         }
         val toolbar:Toolbar? = findViewById(R.id.toolbar) as? Toolbar
         setSupportActionBar(toolbar)
@@ -49,6 +53,22 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener,TextWatcher {
         super.onStart()
         error_text.visibility = View.GONE
         progress_bar.visibility = View.GONE
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        val isErrorTextViewVisisble = error_text.visibility == View.VISIBLE
+        outState?.putBoolean(IS_ERROR_TEXT_VIEW_VISIBLE,isErrorTextViewVisisble)
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if(savedInstanceState != null) {
+            val isErrorTextViewVisible = savedInstanceState.getBoolean(IS_ERROR_TEXT_VIEW_VISIBLE)
+            if(isErrorTextViewVisible){
+                error_text.visibility = View.VISIBLE
+            }
+        }
     }
 
     override fun onClick(v: View?) {

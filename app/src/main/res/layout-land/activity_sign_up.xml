@@ -66,10 +66,16 @@
                   style="@style/ErrorText"
                   app:layout_widthPercent="70%"
                   android:text="@string/not_sign_up_error_text"/>
+        <ProgressBar android:id="@+id/progress_bar"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/error_text"
+                     android:layout_centerHorizontal="true"
+                     android:indeterminateTint="@color/colorPrimary"/>
         <Button
                 android:id="@+id/sign_up_button"
                 android:text="@string/sign_up"
-                android:layout_below="@+id/error_text"
+                android:layout_below="@+id/progress_bar"
                 style="@style/ButtonTemplate"
                 app:layout_widthPercent="50%"
                 android:stateListAnimator="@animator/button_animation"
