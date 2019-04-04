@@ -6,7 +6,7 @@
         android:id="@+id/drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".SearchUserActivity">
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -16,6 +16,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
+                android:layout_marginBottom="1dp"
                 app:elevation="5dp">
             <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
@@ -37,17 +38,9 @@
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
         <android.support.v7.widget.RecyclerView
-                android:id="@+id/chats_recycler"
+                android:id="@+id/users_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/app_bar"/>
     </RelativeLayout>
-
-    <android.support.design.widget.NavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:itemTextColor="@color/colorPrimary"
-            app:menu="@menu/nav_menu"/>
 </android.support.v4.widget.DrawerLayout>

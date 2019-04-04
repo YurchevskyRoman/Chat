@@ -6,4 +6,6 @@
     <color name="grey">#828D97</color>
     <color name="darkGrey">#545E63</color>
     <color name="darkWhite">#EEF0F3</color>
+
+    <color name="profile_item_background">#B3FFFFFF</color>
 </resources>

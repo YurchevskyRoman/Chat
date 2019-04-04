@@ -125,7 +125,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, TextWatcher,
                     email = email,
                     userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
                 )
-                FirebaseDatabase.getInstance().reference.child("Users").child(user.userId).setValue(user.toMap())
+                FirebaseDatabase.getInstance().reference.child("Users").child(user.userId).child("UserInfo").setValue(user.toMap())
                 verifyEmailDialog = VerifyEmailDialog()
                 sendEmailVerification()
             } else {
@@ -160,7 +160,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, TextWatcher,
         verifyEmailDialog?.dismiss()
         val mUser = FirebaseAuth.getInstance().currentUser
         if (mUser != null) {
-            FirebaseDatabase.getInstance().reference.child("Users").child(mUser.uid).removeValue()
+            FirebaseDatabase.getInstance().reference.child("Users").child(mUser.uid).child("UserInfo").removeValue()
             mUser.delete()
         }
         signInButtonListener()

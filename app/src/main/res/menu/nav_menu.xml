@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/create_single_chat"
+          android:title="@string/create_chat"
+          android:icon="@drawable/ic_create_single_chat"/>
+    <item android:id="@+id/create_group_chat"
+          android:title="@string/create_group_chat"
+          android:icon="@drawable/ic_create_group_chat"/>
+    <item android:title="@string/settings"
+    >
+          <menu>
+             <item android:id="@+id/edit_profile"
+                   android:title="@string/edit_profile"
+                   android:icon="@drawable/ic_edit_profile"/>
+          </menu>
+    </item>
+</menu>

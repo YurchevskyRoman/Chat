@@ -11,25 +11,35 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ResetPasswordActivity"
-                  android:label="@string/reset_password"
-                  android:windowSoftInputMode="stateVisible|adjustResize"
-                  android:parentActivityName=".SignInActivity">
+        <activity android:name=".SingleChatActivity"
+        android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+                android:name=".SearchUserActivity"
+                android:label="@string/contacts"
+                android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+                android:name=".ResetPasswordActivity"
+                android:label="@string/reset_password"
+                android:parentActivityName=".SignInActivity"
+                android:windowSoftInputMode="stateVisible|adjustResize">
         </activity>
         <activity
                 android:name=".SignInActivity"
-                android:windowSoftInputMode="stateVisible|adjustResize"
-                android:label="@string/sign_in">
+                android:label="@string/sign_in"
+                android:windowSoftInputMode="stateVisible|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
                 android:name=".SignUpActivity"
-                android:windowSoftInputMode="stateVisible|adjustResize"
                 android:label="@string/sign_up"
-                android:parentActivityName=".SignInActivity">
+                android:parentActivityName=".SignInActivity"
+                android:windowSoftInputMode="stateVisible|adjustResize">
         </activity>
         <activity android:name=".MainActivity">
         </activity>

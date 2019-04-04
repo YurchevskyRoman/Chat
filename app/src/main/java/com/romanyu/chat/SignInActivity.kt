@@ -36,7 +36,7 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener,TextWatcher {
             if(isEmailVerify()){
                 signInCompleted(this)
             }else{
-                FirebaseDatabase.getInstance().reference.child("Users").child(user.uid).removeValue()
+                FirebaseDatabase.getInstance().reference.child("Users").child(user.uid).child("UserInfo").removeValue()
                 user.delete()
             }
         }
@@ -88,7 +88,6 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener,TextWatcher {
     }
 
     private fun signInButtonListener(){
-        progress_bar.visibility = View.VISIBLE
         val email = email_edit_text.text.toString()
         val password = password_edit_text.text.toString()
         val isValidEmail = isValidEmail(email)
@@ -112,6 +111,7 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener,TextWatcher {
     }
 
     private fun signInWithEmailAndPassword(email:String,password:String) {
+        progress_bar.visibility = View.VISIBLE
         val mAuth = FirebaseAuth.getInstance()
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
             task -> if(task.isSuccessful){
