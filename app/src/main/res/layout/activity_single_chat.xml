@@ -16,9 +16,11 @@
         <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="wrap_content"
+                android:elevation="5dp"
                 app:titleTextColor="@color/colorPrimary">
             <RelativeLayout
+                    android:id="@+id/companion_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="5dp">
@@ -36,7 +38,9 @@
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
                         android:layout_marginStart="10dp"
-                        android:layout_toEndOf="@id/profile_photo"/>
+                        android:layout_marginEnd="15dp"
+                        android:layout_toEndOf="@id/profile_photo"
+                        style="@style/CutTextView"/>
                 <TextView
                         android:id="@+id/email"
                         android:layout_width="match_parent"
@@ -45,8 +49,11 @@
                         android:textSize="14sp"
                         android:layout_marginStart="10dp"
                         android:layout_below="@id/username"
-                        android:layout_toEndOf="@id/profile_photo"/>
+                        android:layout_toEndOf="@id/profile_photo"
+                        android:layout_marginEnd="15dp"
+                        style="@style/CutTextView"/>
             </RelativeLayout>
+
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
     <android.support.v7.widget.RecyclerView
@@ -68,10 +75,19 @@
                 android:layout_height="wrap_content"
                 android:maxLines="5"
                 android:hint="@string/message"
-                android:layout_marginEnd="36dp"
                 android:textSize="18sp"
+                android:layout_toLeftOf="@id/attach_photo_button"
                 android:textColor="@color/colorPrimary"
                 android:background="@android:color/transparent"/>
+        <ImageButton android:id="@+id/attach_photo_button"
+                     android:layout_width="36dp"
+                     android:layout_height="36dp"
+                     android:background="@android:color/transparent"
+                     android:visibility="visible"
+                     android:src="@drawable/ic_attach_photo"
+                     android:layout_marginEnd="36dp"
+                     android:layout_alignBottom="@id/message_text"
+                     android:layout_alignParentEnd="true"/>
         <ImageButton android:id="@+id/attach_file_button"
                      android:layout_width="36dp"
                      android:layout_height="36dp"

@@ -7,5 +7,10 @@
     <color name="darkGrey">#545E63</color>
     <color name="darkWhite">#EEF0F3</color>
 
+    <color name="darlBlueColor">#377BE2</color>
+
     <color name="profile_item_background">#B3FFFFFF</color>
+    <color name="own_message_background">#0D9FEB</color>
+    <color name="companion_message_background">#E2F0F3</color>
+    <color name="checked_message_background">#992196F3</color>
 </resources>

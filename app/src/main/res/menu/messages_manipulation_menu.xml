@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/close_item"
+          android:title="@string/close"
+          android:icon="@drawable/ic_close"
+          app:showAsAction="always"/>
+    <item android:id="@+id/reply_item"
+          android:title="@string/reply"
+          android:icon="@drawable/ic_reply"
+          app:showAsAction="always"/>
+    <item android:id="@+id/forward_item"
+          android:title="@string/forward"
+          android:icon="@drawable/ic_forward"
+          app:showAsAction="always"/>
+    <item android:id="@+id/delete_item"
+          android:title="@string/delete"
+          android:icon="@drawable/ic_delete"
+          app:showAsAction="always"/>
+</menu>

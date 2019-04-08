@@ -35,13 +35,18 @@
     <string name="ok">Ok</string>
 
     <string name="search">Search</string>
+    <string name="delete">Delete</string>
+    <string name="reply">Reply</string>
+    <string name="forward">Forward</string>
     <string name="message">Message</string>
     <string name="contacts">Contacts</string>
     <string name="close">Close</string>
     <string name="template_username">ryu99</string>
     <string name="template_email">romanyu1999@gmail.com</string>
-    <string name="template_last_message">Hello,how are you day, what are you doing now?</string>
+    <string name="template_name_file">Head first Android Development for Beginners.pdf</string>
+    <string name="template_last_message">Hello,how are you to day, what are you doing now?</string>
     <string name="template_how_message">78</string>
+    <string name="template_number">9</string>
     <string name="create_chat">Create Chat</string>
     <string name="create_group_chat">Create Group Chat</string>
     <string name="settings">Settings</string>

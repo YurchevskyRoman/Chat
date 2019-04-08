@@ -6,5 +6,5 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         app:titleTextColor="@android:color/white"
-        android:theme="@style/ToolbarTheme"
+        android:elevation="5dp"
 />
