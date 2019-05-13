@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#1091E4</color>
-    <color name="colorPrimaryDark">#0974BB</color>
+    <color name="colorPrimaryDark">#0079C2</color>
     <color name="colorAccent">#D81B60</color>
     <color name="grey">#828D97</color>
     <color name="darkGrey">#545E63</color>
     <color name="darkWhite">#EEF0F3</color>
+    <color name="transparentWhite">#80FFFFFF</color>
+    <color name="chatItemBackground">#F3F3F3</color>
 
     <color name="darlBlueColor">#377BE2</color>
 
@@ -13,4 +15,12 @@
     <color name="own_message_background">#0D9FEB</color>
     <color name="companion_message_background">#E2F0F3</color>
     <color name="checked_message_background">#992196F3</color>
+
+    <color name="select_image_item_color">#03A9F4</color>
+    <color name="image_item_color">#806C7275</color>
+    <color name="image_item_color_fill">#6C7275</color>
+    <color name="blue_transparent">#663A444E</color>
+
+    <color name="gallery_background">#4F5257</color>
+    <color name="gallery_toolbar_background">#E64F5257</color>
 </resources>

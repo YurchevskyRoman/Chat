@@ -4,13 +4,16 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:padding="5dp"
-        android:background="@color/colorPrimary">
+>
+    <ImageView android:layout_width="match_parent"
+               android:layout_height="200dp"
+               android:src="@drawable/header_background"
+               android:scaleType="centerCrop"/>
     <RelativeLayout
             android:id="@+id/user_info_block"
             android:layout_width="match_parent"
             android:layout_height="190dp"
-            android:visibility="visible">
+            android:visibility="gone">
         <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_photo"
                 android:layout_width="72dp"
@@ -37,15 +40,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/template_email"
-                android:textColor="@color/darkGrey"
+                android:textColor="@color/darkWhite"
                 android:layout_below="@id/username"
                 android:layout_marginStart="15dp"/>
+        <android.support.design.widget.FloatingActionButton
+                android:id="@+id/camera_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera"
+                app:backgroundTint="@color/transparentWhite"
+                app:borderWidth="0dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"/>
     </RelativeLayout>
     <LinearLayout
             android:id="@+id/loading_block"
             android:layout_width="match_parent"
             android:layout_height="190dp"
-            android:background="@color/colorPrimary"
+            android:visibility="visible"
             android:orientation="vertical"
             android:gravity="center">
         <ProgressBar

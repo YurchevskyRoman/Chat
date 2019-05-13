@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/profile_item_background"
-        app:cardCornerRadius="5dp"
-        android:layout_margin="1dp">
-    <RelativeLayout
+        android:background="@color/chatItemBackground">
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_photo"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/placeholder_avatar"/>
+    <TextView
+            android:id="@+id/username"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
-        <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_photo"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/placeholder_avatar"/>
-        <TextView
-                android:id="@+id/username"
-                android:layout_width="match_parent"
-                android:layout_height="28dp"
-                android:text="@string/template_username"
-                android:textSize="20sp"
-                android:layout_margin="5dp"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
-                android:layout_toRightOf="@id/profile_photo"
-                style="@style/CutTextView"/>
-        <TextView
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="@string/template_email"
-                android:textSize="16sp"
-                android:layout_marginLeft="5dp"
-                android:layout_below="@id/username"
-                android:layout_toRightOf="@id/profile_photo"
-                style="@style/CutTextView"/>
-    </RelativeLayout>
-
-</android.support.v7.widget.CardView>
+            android:layout_height="28dp"
+            android:text="@string/template_username"
+            android:textSize="20sp"
+            android:layout_margin="7dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_toRightOf="@id/profile_photo"
+            style="@style/CutTextView"/>
+    <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:text="@string/template_email"
+            android:textSize="16sp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/username"
+            android:layout_toRightOf="@id/profile_photo"
+            style="@style/CutTextView"/>
+    <View android:id="@+id/bottom_outline"
+          android:layout_width="match_parent"
+          android:layout_height="2dp"
+          android:background="@drawable/bottom_outline"
+          android:layout_below="@id/profile_photo"
+          android:layout_toEndOf="@id/profile_photo"
+    />
+</RelativeLayout>

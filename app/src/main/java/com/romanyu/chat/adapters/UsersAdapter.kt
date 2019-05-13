@@ -33,6 +33,11 @@ class UsersAdapter(
 
     override fun onBindViewHolder(viewHolder: ViewHolder, index: Int) {
         val user = usersList[index]
+        if(index == usersList.size - 1){
+            viewHolder.bottomOutline.visibility = View.GONE
+        }else{
+            viewHolder.bottomOutline.visibility = View.VISIBLE
+        }
         viewHolder.usernameTextView.text = user.username
         viewHolder.emailTextView.text = user.email
         Glide.with(context).load(user.imageUrl).placeholder(R.drawable.placeholder_avatar)
@@ -50,11 +55,12 @@ class UsersAdapter(
         val profileImageView: CircleImageView
         val usernameTextView: TextView
         val emailTextView: TextView
-
+        val bottomOutline: View
         init {
             profileImageView = view.profile_photo
             usernameTextView = view.username
             emailTextView = view.email
+            bottomOutline = view.bottom_outline
         }
     }
 }

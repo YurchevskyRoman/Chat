@@ -10,8 +10,11 @@ data class Message(
     val imageUrl:String = "",
     val fileUrl:String = "",
     val text:String = "",
+    val date:String = "",
     @field:JvmField
-    val isRead:Boolean = false
+    val isRead:Boolean = false,
+    @field:JvmField
+    val isShowOnlyForSender: Boolean = false
 ) {
     @Exclude
     fun toMap(): Map<String, Any> {
@@ -22,7 +25,9 @@ data class Message(
             "imageUrl" to imageUrl,
             "fileUrl" to fileUrl,
             "text" to text,
-            "isRead" to isRead
+            "isRead" to isRead,
+            "isShowOnlyForSender" to isShowOnlyForSender,
+            "date" to date
         )
     }
 }

@@ -10,19 +10,20 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_template_1">
+            android:background="@color/chatItemBackground">
         <android.support.design.widget.AppBarLayout
                 android:id="@+id/app_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"
+                android:background="@color/colorPrimary"
                 android:layout_marginBottom="1dp"
                 app:elevation="5dp">
             <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:titleTextColor="@color/colorPrimary"
+                    app:titleTextColor="@android:color/white"
+                    android:theme="@style/ToolbarTheme"
                     android:elevation="10dp">
                 <EditText
                         android:id="@+id/search_text"
@@ -33,8 +34,8 @@
                         android:hint="@string/search"
                         android:layout_margin="5dp"
                         android:textSize="18sp"
-                        android:textColor="@color/colorPrimary"
-                        android:background="@android:color/transparent"/>
+                        android:background="@android:color/transparent"
+                        style="@style/AppEditText"/>
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
         <android.support.v7.widget.RecyclerView
@@ -42,5 +43,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/app_bar"/>
+        <ProgressBar android:id="@+id/users_progress_bar"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_centerInParent="true"
+                     android:indeterminateTint="@color/colorPrimary"/>
+        <TextView android:id="@+id/empty_content_warning"
+                  android:visibility="gone"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/no_users"
+                  android:gravity="center"
+                  android:layout_centerInParent="true"
+                  android:textSize="18sp"/>
     </RelativeLayout>
 </android.support.v4.widget.DrawerLayout>

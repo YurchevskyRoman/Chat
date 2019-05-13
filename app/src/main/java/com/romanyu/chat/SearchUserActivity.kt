@@ -84,6 +84,12 @@ class SearchUserActivity : AppCompatActivity() {
                     }
                 }
                 usersAdapter.notifyDataSetChanged()
+                users_progress_bar.visibility = View.GONE
+                if(usersList.isEmpty()){
+                    empty_content_warning.visibility = View.VISIBLE
+                }else{
+                    empty_content_warning.visibility = View.GONE
+                }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {

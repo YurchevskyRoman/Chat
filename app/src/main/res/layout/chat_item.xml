@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp">
-    <RelativeLayout
+        android:background="@color/chatItemBackground"
+        android:paddingTop="10dp"
+        android:paddingStart="10dp">
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/companion_profile_photo"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/placeholder_avatar"/>
+    <TextView
+            android:id="@+id/companion_username"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:layout_height="28dp"
+            android:text="@string/template_username"
+            android:textSize="20sp"
+            android:layout_margin="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_toStartOf="@id/how_message"
+            android:layout_toEndOf="@id/companion_profile_photo"/>
+    <LinearLayout android:id="@+id/chat_last_message_block"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_toEndOf="@id/companion_profile_photo"
+                  android:layout_below="@id/companion_username"
+                  android:layout_toStartOf="@id/message_time"
+                  android:orientation="horizontal"
+                  android:gravity="center">
         <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/chat_profile_photo"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/placeholder_avatar"/>
-        <TextView
-                android:id="@+id/chat_name"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="@string/template_username"
-                android:textSize="20sp"
+                android:id="@+id/current_user_profile_photo"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:layout_margin="5dp"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
-                android:layout_toLeftOf="@id/how_message"
-                android:layout_toRightOf="@id/chat_profile_photo"/>
+                android:src="@drawable/placeholder_avatar"/>
         <TextView
                 android:id="@+id/chat_last_message"
                 android:layout_width="match_parent"
@@ -32,25 +44,49 @@
                 android:text="@string/template_last_message"
                 android:textSize="16sp"
                 android:layout_marginStart="5dp"
-                android:layout_below="@id/chat_name"
-                android:layout_toLeftOf="@id/how_message"
-                android:layout_toRightOf="@id/chat_profile_photo"
                 style="@style/CutTextView"/>
-        <TextView
-                android:id="@+id/how_message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/template_how_message"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                android:paddingRight="9dp"
-                android:paddingLeft="9dp"
-                android:paddingBottom="3dp"
-                android:paddingTop="3dp"
-                android:layout_margin="3dp"
-                style="@style/CutTextView"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/circle_background_primary"/>
-    </RelativeLayout>
-
-</android.support.v7.widget.CardView>
+    </LinearLayout>
+    <TextView
+            android:id="@+id/message_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/template_date"
+            android:textSize="14sp"
+            android:layout_margin="10dp"
+            style="@style/CutTextView"
+            android:layout_alignParentEnd="true"
+    />
+    <View
+            android:id="@+id/indicator"
+            android:visibility="visible"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/chat_last_message_block"
+            android:background="@drawable/blue_circle"/>
+    <TextView
+            android:id="@+id/how_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/template_how_message"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:paddingRight="9dp"
+            android:paddingLeft="9dp"
+            android:paddingBottom="3dp"
+            android:paddingTop="3dp"
+            android:layout_margin="10dp"
+            style="@style/CutTextView"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/chat_last_message_block"
+            android:background="@drawable/circle_background_primary"/>
+    <View android:id="@+id/bottom_outline"
+          android:layout_width="match_parent"
+          android:layout_height="2dp"
+          android:background="@drawable/bottom_outline"
+          android:layout_below="@id/chat_last_message_block"
+          android:layout_toEndOf="@id/companion_profile_photo"
+          />
+</RelativeLayout>
